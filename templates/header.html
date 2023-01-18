@@ -1,0 +1,88 @@
+{% block content %}
+{% load static %}
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Aisat Restaurant</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{%  static 'css/custom.css' %}">
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<header class="top-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" >
+                <img style="width: 80px; margin-left: -150px;" src="{% static 'images/download.png' %}" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbars-rs-food">
+                <ul class="navbar-nav ml-auto">
+													{% if request.session.uid %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'indexx' %}">Home</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="profile">View Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="viewfoodc">View food</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="vieworderr">view order</a></li>
+                    <li class="nav-item"><a class="nav-link" href="viewcart">view Token</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+
+
+											{% elif request.session.admin %}
+					 <li class="nav-item"><a class="nav-link" href="{% url 'indexx' %}">Home</a></li>
+
+                    <li class="nav-item "><a class="nav-link" href="addfood">Add Food</a></li> 
+                    <li class="nav-item "><a class="nav-link" href="viewfood">View Food</a></li> 
+                    <li class="nav-item "><a class="nav-link" href="vieworder">View Order</a></li>
+					<li class="nav-item "><a class="nav-link" href="paid">Order Paid</a></li> 
+					<li class="nav-item "><a class="nav-link" href="totalorder">Total Order</a></li> 
+
+                    <li class="nav-item "><a class="nav-link" href="logout">Logout</a></li>
+
+
+											{% else %}
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'indexx' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login">login</a></li>
+                    
+                        
+                        
+                    
+                    
+                    <li class="nav-item"><a class="nav-link" href="register">Register</a></li>
+																{% endif %}
+                    </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{% endblock %}  

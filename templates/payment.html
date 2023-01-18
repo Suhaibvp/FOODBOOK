@@ -1,0 +1,101 @@
+{% load static %}
+{% block content %}
+
+{% include 'header.html' %}
+
+            <!-- Navbar End -->
+
+            <!-- Navbar End -->
+								<div id="GFG"> 
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="{% static 'qrcode.js' %}">
+</script>
+    <script type="text/javascript" src="{% static 'html5-qrcode.js' %}">
+</script>
+   
+<br><br><br><br>
+            <!-- Typography Start -->
+            <div class="container pt-4 px-4">
+                <div class="row g-4">
+                   
+                
+                    <div class="col-sm-6">
+  <form name="QRform" id="QRform">
+      <textarea name="textField" onkeyup='updateQRCode(this.value)' style="display:none;" onclick="this.focus();this.select();">{{result.customer_id}}</textarea>
+    </form>
+    
+    
+                        <div class="bg-light rounded h-100 p-4">
+						<h2 style="color:blue;"><b> AISAT Restaurant</b></h2>
+							 <div id="qrcode"></div>
+<br>
+                            <h1 class="mb-4"><b>Token Number:{{result.id}}</B></h1>
+                                <h1><b>Price:{{result.total_amount}}</b></h1>
+
+                               
+                                
+
+                            </dl>
+							<br><br><br>
+							<center>
+                        </div>
+						</div>
+						<div></div>
+						</div>
+						</div></div>
+									<br><br>			
+             <center><input type="button" value="print" class="btn btn-primary" onclick="printDiv()">
+			 
+            <a href="{% url 'homeback' %}"class="btn btn-primary">HOME</a></center>
+
+                    </div>
+                    
+                  
+                </div>
+            </div>
+			</div>
+            <!-- Typography End -->
+	</div>	</div>	</div>	</div>
+
+            <!-- Footer Start -->
+           
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+    <script type="text/javascript">
+      function updateQRCode(text) {
+
+        var element = document.getElementById("qrcode");
+
+        var bodyElement = document.body;
+        if(element.lastChild)
+          element.replaceChild(showQRCode(text), element.lastChild);
+        else
+          element.appendChild(showQRCode(text));
+
+      }
+
+      updateQRCode('www.tutorialspoint.com');
+    </script>
+    <!-- JavaScript Libraries -->
+  
+<script>
+        function printDiv() {
+            var divContents = document.getElementById("GFG").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+    <!-- Template Javascript -->
+    <script src="{% static 'admin/js/main.js' %}"></script>
+
+{% endblock %}
+</body>
+
+</html>

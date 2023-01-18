@@ -1,0 +1,98 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<body>
+	<!-- Start header -->
+	{% include 'header.html' %}
+	<!-- End header -->
+	
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-center">
+				<img src="{% static 'images/slider-01.jpg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br>Canteen</strong></h1>
+							<p class="m-b-40">Search Your Taste In Here!!<br> 
+							</p>
+							
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="{% static 'images/slider-01.jpg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br> Canteen</strong></h1>
+							<p class="m-b-40">Eat! Eat! Eat!</p>
+							
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="{% static 'images/slider-01.jpg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br> Canteen</strong></h1>
+							<p class="m-b-40">Food Is The Best Feeling In The World</p>
+							
+						</div>
+					</div>
+				</div>
+			</li>
+		
+		</ul>
+
+	</div>
+	<!-- End slides -->
+
+	<!-- Start Gallery -->
+
+	<!-- End Customer Reviews -->
+	
+	<!-- Start Contact info -->
+	<div class="contact-imfo-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<i class="fa fa-volume-control-phone"></i>
+					<div class="overflow-hidden">
+						<h4>Phone</h4>
+						<p class="lead">
+							+01 123-456-4590
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-envelope"></i>
+					<div class="overflow-hidden">
+						<h4>Email</h4>
+						<p class="lead">
+							yourmail@gmail.com
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-map-marker"></i>
+					<div class="overflow-hidden">
+						<h4>Location</h4>
+						<p class="lead">
+							800, Lorem Street, US
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Contact info -->
+	
+	<!-- Start Footer -->
+	{% include 'footer.html' %}
+{% endblock %}

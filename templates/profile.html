@@ -1,0 +1,68 @@
+{% block content %}
+{% load static %}
+{% include 'header.html' %}
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> 
+<!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+    <div class="container py-5 h-100">
+    
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="">
+          <div class="row g-0">
+           
+            <div class="col-xl-12">
+                
+                    {% csrf_token %}
+                    <br><br><br>
+                <h1 align="center">My Profile</h1>
+
+                <table align="center" class="table table-striped table-bordered" style="width:615px;">
+   
+                    <tbody>
+                    <br>
+                    <br>
+                
+                     <tr>
+                        <th class="col-sm-4">Name</th>
+                        <td>{{result.full_name}}</td>
+                       
+                      </tr>
+                    
+                      <tr>
+                        <th>Contact</th>
+                        <td>{{result.contact}}</td>
+                       
+                      </tr>
+                      <tr>
+                        <th>Email</th>
+                        <td>{{result.email_address}}</td>
+                       
+                      </tr>
+                      <tr>
+                        <th>User Name</th>
+                        <td>{{result.username}}</td>
+                       
+                      </tr>
+                      
+                      
+                    
+                 
+                       
+                 
+                    </tbody>
+                    
+                  </table>
+                
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+ {% include 'footer.html' %}
+{% endblock %}
